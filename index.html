@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Meme Generator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Includes -->
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat|Open+Sans|Josefin+Slab" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+	<script src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/app.class.js"></script>
+
+</head>
+<body>
+
+<div class="mg-container meme-generator-wrapper">
+
+	<h2 class="mg-title">Meme Generator</h2>
+
+	<div class="mg-left">
+		<div class="mg-controls">
+			<button class="mg-refresh" id="meme-generator-refresh"><img src="img/refresh.png" alt="Refresh icon"></button>
+			<button>Add scumbag hat</button>
+			<button>Add image</button>
+			<button>Draw</button>
+		</div>
+
+		<div class="mg-generator">
+			<div id="meme-generator-main-image">
+				<canvas width="0" height="0"></canvas>
+			</div>
+		</div>
+		<div class="mg-meme-name">
+			<h4>One does not Simply</h4>
+		</div>
+	</div>
+
+	<div class="mg-right">
+		<button class="mg-b-invert" id="mg-upload-own-image">Upload your own image</button>
+		<input type="file" id="meme-generator-file-input" />
+
+		<div class="mg-carousel-holder">
+			<h3>Other Memes</h3>
+			<div id="mg-carousel">
+				<div class="item"><img src="img/meme-1.jpg" alt="Meme"></div>
+				<div class="item"><img src="img/meme-2.jpg" alt="Meme"></div>
+				<div class="item"><img src="img/meme-3.jpg" alt="Meme"></div>
+				<div class="item"><img src="img/meme-4.jpg" alt="Meme"></div>
+				<div class="item"><img src="img/meme-5.jpg" alt="Meme"></div>
+				<div class="item"><img src="img/meme-6.jpg" alt="Meme"></div>
+				<div class="item"><img src="img/meme-4.jpg" alt="Meme"></div>
+				<div class="item"><img src="img/meme-4.jpg" alt="Meme"></div>
+				<div class="item"><img src="img/meme-4.jpg" alt="Meme"></div>
+				<div class="item"><img src="img/meme-4.jpg" alt="Meme"></div>
+				<div class="item"><img src="img/meme-4.jpg" alt="Meme"></div>
+				<div class="item"><img src="img/meme-4.jpg" alt="Meme"></div>
+			</div>
+			<a href="#">view all memes</a>
+		</div>
+		<div class="mg-meme-options">
+			<div class="mg-text-boxes"></div>
+			<button id="mg-action-generate-meme">Generate Meme</button>
+			<div class="mg-text-options-box">
+				<button id="mg-options"><i class="fa fa-caret-up"></i>hide options</button>
+
+				<div class="mg-text-options">
+					<button id="mg-add-another-box">Add another textbox</button><br>
+					
+					<label>Font</label>
+					<select class="mg-text-font-family">
+						<option selected value="Impact">Impact</option>
+						<option value="Arial">Arial</option>
+						<option value="Comic Sans">Comic Sans</option>
+						<option value="Open Sans">Open Sans</option>
+						<option value="Lora">Lora</option>
+						<option value="Montserrat">Montserrat</option>
+						<option value="Josefin Slab">Josefin Slab</option>
+					</select><br>
+					
+					<label>Max Font Size <input type="number" name="font-size" value="50" min="1" max="999"> px</label><br>
+
+					<label><input type="checkbox" name="font-shadow" checked> Font Shadow</label><br>
+
+					<label><input type="checkbox" name="all-caps" checked> USE ALL CAPS</label><br>
+
+					<label><input type="checkbox" name="drag-drop" checked> Enable drag/drop &amp; resize</label><br>
+
+					<label><input type="checkbox" name="no-resize"> Use resolution of original template image, do not resize.<br> Potentially higher quality, but larger filesize.</label><br>
+				</div>
+
+				<p>Pro-tip: If you <a href="#">Login or Join</a>, your captioned memes will be saved in your account</p>
+				<input type="checkbox" name="private">
+				<label>Private <small>(you'll have to download your image to save or share it)</small></label>
+
+				<div class="mg-generate-meme">
+					<button class="mg-b-invert">Reset</button>
+				</div>
+			</div><!-- ./mg-text-options-box -->
+		</div>
+	</div>
+
+</div><!-- ./mg-container -->
+
+<div id="mg-generate-test-img"></div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		//MemeGenerator.load_image( 'demo-img.jpg' );
+		MemeGenerator.load_image( 'assets/The-Most-Interesting-Man-In-The-World.jpg' );
+
+		MemeGenerator.set_caption({
+			'pos'			: 'top',
+			'placeholder'	: 'Top Text',
+			'colors'		: {
+				'font'	: '#ffffff',
+				'shadow': '#e67e22'
+			}
+		});
+	});
+</script>
+
+</body>
+</html>
